@@ -7,17 +7,17 @@
   
   <title>认识tbschedule | tangqi&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活的点滴">
+  <meta name="description" content="一、tbschedule是什么二、tbschedule如何使用三、tbschedule的实现原理四、tbschedule的存储策略zookeeper存储|-tangqi   |-createJobTest    tbschedule的版本   [taobao-pamirs-schedule-3.0.0]     |-factory         null       |-机器01">
 <meta property="og:type" content="article">
 <meta property="og:title" content="认识tbschedule">
 <meta property="og:url" content="http://yoursite.com/2018/04/11/认识tbschedule/index.html">
 <meta property="og:site_name" content="tangqi&#39;s blog">
-<meta property="og:description" content="记录生活的点滴">
+<meta property="og:description" content="一、tbschedule是什么二、tbschedule如何使用三、tbschedule的实现原理四、tbschedule的存储策略zookeeper存储|-tangqi   |-createJobTest    tbschedule的版本   [taobao-pamirs-schedule-3.0.0]     |-factory         null       |-机器01">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-11T03:59:31.441Z">
+<meta property="og:updated_time" content="2018-04-17T10:11:52.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识tbschedule">
-<meta name="twitter:description" content="记录生活的点滴">
+<meta name="twitter:description" content="一、tbschedule是什么二、tbschedule如何使用三、tbschedule的实现原理四、tbschedule的存储策略zookeeper存储|-tangqi   |-createJobTest    tbschedule的版本   [taobao-pamirs-schedule-3.0.0]     |-factory         null       |-机器01">
   
     <link rel="alternate" href="/atom.xml" title="tangqi&#39;s blog" type="application/atom+xml">
   
@@ -90,11 +90,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="一、tbschedule是什么"><a href="#一、tbschedule是什么" class="headerlink" title="一、tbschedule是什么"></a>一、tbschedule是什么</h3><h3 id="二、tbschedule如何使用"><a href="#二、tbschedule如何使用" class="headerlink" title="二、tbschedule如何使用"></a>二、tbschedule如何使用</h3><h3 id="三、tbschedule的实现原理"><a href="#三、tbschedule的实现原理" class="headerlink" title="三、tbschedule的实现原理"></a>三、tbschedule的实现原理</h3><h3 id="四、tbschedule的存储策略"><a href="#四、tbschedule的存储策略" class="headerlink" title="四、tbschedule的存储策略"></a>四、tbschedule的存储策略</h3><h4 id="zookeeper存储"><a href="#zookeeper存储" class="headerlink" title="zookeeper存储"></a>zookeeper存储</h4><pre><code>|-tangqi
+  |-createJobTest    tbschedule的版本   [taobao-pamirs-schedule-3.0.0]
+    |-factory         null
+      |-机器01         null             [执行任务的机器名数组]
+      |-机器02         null             [执行任务的机器名数组]
+    |-strategy      null               [调度策略数组]
+      |-策略名称        {&quot;strategyName&quot;:&quot;IScheduleTaskDealSingleTest&quot;,&quot;IPList&quot;:[&quot;127.0.0.1&quot;],&quot;numOfSingleServer&quot;:1,&quot;assignNum&quot;:2,&quot;kind&quot;:&quot;Schedule&quot;,&quot;taskName&quot;:&quot;IScheduleTaskDealSingleTest&quot;,&quot;taskParameter&quot;:&quot;&quot;,&quot;sts&quot;:&quot;resume&quot;}                  [配置的策略信息]
+        |- 机器名01     {&quot;strategyName&quot;:&quot;IScheduleTaskDealSingleTest&quot;,&quot;uuid&quot;:&quot;10.4.87.126$tangqideMacBook-Pro.local$DAA4F8EC1A6440DFA5DED2CC70836DF1$0000000076&quot;,&quot;requestNum&quot;:1,&quot;currentNum&quot;:0,&quot;message&quot;:&quot;&quot;}                    [执行的服务器基本信息]
+        |- 机器名02
+    |-baseTaskType  [任务名称数组]
+      |-调度策略名称？
+        |- 任务名称
+           |-taskItem [分片的task item 信息]
+           |-server []
+</code></pre><p>1.factory : 执行任务的机器信息</p>
+<p>  [10.4.87.126$tangqideMacBook-Pro.local$DAA4F8EC1A6440DFA5DED2CC70836DF1$0000000076, 172.21.0.4$371c54d4c5ce$B47DA5478C0D49D092592F584F4A3A51$0000000075]</p>
+<p>2、[IScheduleTaskDealSingleTest]</p>
+<p>3、baseTaskType 任务名称</p>
+<p>  [IScheduleTaskDealSingleTest]</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/认识tbschedule/" data-id="cjfukg50b0001jhx9f6xmw08o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/认识tbschedule/" data-id="cjg3if6l6000244x9d0m7ipbw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -102,6 +121,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/04/12/定时器的实现原理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          定时器的实现原理
+        
+      </div>
+    </a>
   
   
     <a href="/2018/04/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -141,6 +169,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/12/定时器的实现原理/">定时器的实现原理</a>
+          </li>
         
           <li>
             <a href="/2018/04/11/认识tbschedule/">认识tbschedule</a>

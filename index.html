@@ -69,6 +69,42 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-定时器的实现原理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/12/定时器的实现原理/" class="article-date">
+  <time datetime="2018-04-12T03:17:11.000Z" itemprop="datePublished">2018-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/12/定时器的实现原理/">定时器的实现原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、时间堆方式"><a href="#1、时间堆方式" class="headerlink" title="1、时间堆方式"></a>1、时间堆方式</h3><h3 id="2、时间轮方式"><a href="#2、时间轮方式" class="headerlink" title="2、时间轮方式"></a>2、时间轮方式</h3><h3 id="3、链表方式"><a href="#3、链表方式" class="headerlink" title="3、链表方式"></a>3、链表方式</h3><h3 id="4、排序链表方式"><a href="#4、排序链表方式" class="headerlink" title="4、排序链表方式"></a>4、排序链表方式</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/12/定时器的实现原理/" data-id="cjg3if6l1000144x9tt93qef9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-认识tbschedule" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/11/认识tbschedule/" class="article-date">
@@ -91,11 +127,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="一、tbschedule是什么"><a href="#一、tbschedule是什么" class="headerlink" title="一、tbschedule是什么"></a>一、tbschedule是什么</h3><h3 id="二、tbschedule如何使用"><a href="#二、tbschedule如何使用" class="headerlink" title="二、tbschedule如何使用"></a>二、tbschedule如何使用</h3><h3 id="三、tbschedule的实现原理"><a href="#三、tbschedule的实现原理" class="headerlink" title="三、tbschedule的实现原理"></a>三、tbschedule的实现原理</h3><h3 id="四、tbschedule的存储策略"><a href="#四、tbschedule的存储策略" class="headerlink" title="四、tbschedule的存储策略"></a>四、tbschedule的存储策略</h3><h4 id="zookeeper存储"><a href="#zookeeper存储" class="headerlink" title="zookeeper存储"></a>zookeeper存储</h4><pre><code>|-tangqi
+  |-createJobTest    tbschedule的版本   [taobao-pamirs-schedule-3.0.0]
+    |-factory         null
+      |-机器01         null             [执行任务的机器名数组]
+      |-机器02         null             [执行任务的机器名数组]
+    |-strategy      null               [调度策略数组]
+      |-策略名称        {&quot;strategyName&quot;:&quot;IScheduleTaskDealSingleTest&quot;,&quot;IPList&quot;:[&quot;127.0.0.1&quot;],&quot;numOfSingleServer&quot;:1,&quot;assignNum&quot;:2,&quot;kind&quot;:&quot;Schedule&quot;,&quot;taskName&quot;:&quot;IScheduleTaskDealSingleTest&quot;,&quot;taskParameter&quot;:&quot;&quot;,&quot;sts&quot;:&quot;resume&quot;}                  [配置的策略信息]
+        |- 机器名01     {&quot;strategyName&quot;:&quot;IScheduleTaskDealSingleTest&quot;,&quot;uuid&quot;:&quot;10.4.87.126$tangqideMacBook-Pro.local$DAA4F8EC1A6440DFA5DED2CC70836DF1$0000000076&quot;,&quot;requestNum&quot;:1,&quot;currentNum&quot;:0,&quot;message&quot;:&quot;&quot;}                    [执行的服务器基本信息]
+        |- 机器名02
+    |-baseTaskType  [任务名称数组]
+      |-调度策略名称？
+        |- 任务名称
+           |-taskItem [分片的task item 信息]
+           |-server []
+</code></pre><p>1.factory : 执行任务的机器信息</p>
+<p>  [10.4.87.126$tangqideMacBook-Pro.local$DAA4F8EC1A6440DFA5DED2CC70836DF1$0000000076, 172.21.0.4$371c54d4c5ce$B47DA5478C0D49D092592F584F4A3A51$0000000075]</p>
+<p>2、[IScheduleTaskDealSingleTest]</p>
+<p>3、baseTaskType 任务名称</p>
+<p>  [IScheduleTaskDealSingleTest]</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/认识tbschedule/" data-id="cjfukg50b0001jhx9f6xmw08o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/认识tbschedule/" data-id="cjg3if6l6000244x9d0m7ipbw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +183,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
@@ -136,11 +191,13 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p><img src="ls.png" alt="lassssss"></p>
+<p>ST环境发布申请：<br>1、发布对象：ecej-order-threeparty-gateway<br>2、发布内容：修改B端APP取消时的参数校验逻辑<br>3、发布时间：随时</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/hello-world/" data-id="cjfukg5050000jhx9cpk4nbhl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/hello-world/" data-id="cjg3if6kg000044x9irx22cz4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,6 +236,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/12/定时器的实现原理/">定时器的实现原理</a>
+          </li>
         
           <li>
             <a href="/2018/04/11/认识tbschedule/">认识tbschedule</a>
