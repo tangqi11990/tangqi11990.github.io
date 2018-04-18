@@ -95,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/12/定时器的实现原理/" data-id="cjg4wybp90001khx9vyt2z9jz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/12/定时器的实现原理/" data-id="cjg4xn4ij0001ogx9uu9r7wdw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +128,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、tbschedule是什么"><a href="#一、tbschedule是什么" class="headerlink" title="一、tbschedule是什么"></a>一、tbschedule是什么</h3><h3 id="二、tbschedule如何使用"><a href="#二、tbschedule如何使用" class="headerlink" title="二、tbschedule如何使用"></a>二、tbschedule如何使用</h3><pre><code>以下内容部分摘自tbschedule的taobao官网,链接如下
-[tbschedule官网文档地址](href=http://code.taobao.org/p/tbschedule/wiki/index/)
+[tbschedule官网文档地址(href=http://code.taobao.org/p/tbschedule/wiki/index/)]
 </code></pre><h5 id="1、调度器的设计"><a href="#1、调度器的设计" class="headerlink" title="1、调度器的设计"></a>1、调度器的设计</h5><pre><code>1、tbschedule的目的是让一种批量任务或者不断变化的任务，能够被动态的分配到多个主机的JVM中，不同的线程组中并行执行。所有的任务能够被不重复，不遗漏的快速处理。
 
 2、调度的Manager可以动态的随意增加和停止
@@ -163,7 +163,7 @@
 
     3、目前版本所有的心跳信息都是存放在Zookeeper服务器中的，所有的Server都是对等的，当一个Server死亡后，其它Server会接管起拥有的任务队列，期间会有几个心跳周期的时延。后续可以用类似ConfigerServer类的存储。
 
-    4、现有的工作线程模式分为Sleep模式和NotSleep模式。缺省是缺省是NOTSLEEP模式。在通常模式下，在通常情况下用Sleep模式。在一些特殊情况需要用NotSleep模式。两者之间的差异在后续进行描述。
+    4、现有的工作线程模式分为Sleep模式和NotSleep模式。缺省是缺省是NOTSLEEP模式。在通常情况下用Sleep模式。在一些特殊情况需要用NotSleep模式。两者之间的差异在后续进行描述。
 
 3、TaskItem任务项
 
@@ -184,7 +184,7 @@
    是业务系统进行数据处理的实现类。要求实现Schedule的接口IScheduleTaskDealMulti或者IScheduleTaskDealSingle。接口主要包括两个方法。一个是根据调度器分配到的队列查询数据的接口，一个是进行数据处理的接口。
    运行时间
 
-     1、可以指定任务处理的时间间隔，例如每天的1：00－3：00执行，或者每个月的第一天执行、每一个小时的第一分钟执行等等。时间格式与crontab相同。如果不指定就表示一致运行。PERMIT_RUN_START_TIME,PERMIT_RUN_END_TIME
+     1、可以指定任务处理的时间间隔，例如每天的1：00－3：00执行，或者每个月的第一天执行、每一个小时的第一分钟执行等等。时间格式与crontab相同。如果不指定就表示一直运行。PERMIT_RUN_START_TIME,PERMIT_RUN_END_TIME
 
      2、可以指定如果没有数据了，休眠的时间间隔。SLEEP_TIME_NODATA 单位秒
 
@@ -257,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/认识tbschedule/" data-id="cjg4wybpf0002khx9x9u3t485" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/认识tbschedule/" data-id="cjg4xn4is0002ogx9vz5veqdu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/11/hello-world/" data-id="cjg4wybp00000khx9cyo2gf6v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/11/hello-world/" data-id="cjg4xn4ib0000ogx9bu0o9wpu" class="article-share-link">Share</a>
       
       
     </footer>
